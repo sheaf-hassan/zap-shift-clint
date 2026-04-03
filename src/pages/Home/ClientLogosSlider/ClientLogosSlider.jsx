@@ -31,10 +31,7 @@ const ClientLogosSlider = () => {
   return (
     <section className="py-16  overflow-hidden bg-amber-50">
       <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold text-primary">Trusted By</h2>
-        <p className="text-gray-500 mt-2">
-          Companies that trust our services
-        </p>
+        <h2 className="text-3xl font-bold text-primary">Trusted By Leading Brands</h2>
       </div>
 
       {/* This CSS is vital for the "Marquee" effect. 
@@ -53,7 +50,7 @@ const ClientLogosSlider = () => {
         slidesPerView={2}
         spaceBetween={50}
         loop={true}
-        speed={2000} // Speed of the transition (higher = slower/smoother)
+        speed={700} // Speed of the transition (higher = slower/smoother)
         autoplay={{
           delay: 0,
           disableOnInteraction: false,
@@ -70,7 +67,7 @@ const ClientLogosSlider = () => {
             <img
               src={logo}
               alt={`brand-logo-${index}`}
-              className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition duration-300 cursor-pointer"
+              className="h-12 w-auto object-contain transition duration-300 cursor-pointer hover:blur-xs"
             />
           </SwiperSlide>
         ))}
