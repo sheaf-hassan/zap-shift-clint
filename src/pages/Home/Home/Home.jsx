@@ -3,17 +3,19 @@ import Banner from '../Banner/Banner';
 import Services from '../Services/Services';
 import ClientLogosSlider from '../ClientLogosSlider/ClientLogosSlider';
 import Benefits from '../Benefits/Benefits';
+import BeMerchant from '../BeMerchant/BeMerchant';
 
 
 
 
 const Home = () => {
   return (
-    <div>
+    <div className='bg-amber-50'>
       <Banner></Banner>
       <Services></Services>
       <ClientLogosSlider></ClientLogosSlider>
       <Benefits></Benefits>
+      <BeMerchant></BeMerchant>
     </div>
   );
 };

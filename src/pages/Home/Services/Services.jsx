@@ -52,7 +52,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-base-200">
+    <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50">
       
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto mb-12">

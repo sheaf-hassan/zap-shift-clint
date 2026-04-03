@@ -34,7 +34,9 @@ export default function Benefits() {
       {/* Top Dotted Line */}
       <div className="max-w-6xl mx-auto mb-14 border-t-2 border-dotted border-gray-300"></div>
 
-      
+      <h2 className="text-3xl text-green-900 font-bold text-center mb-10">
+        Why Choose Us
+      </h2>
 
       <div className="space-y-8 max-w-6xl mx-auto">
         {benefits.map((item) => (
