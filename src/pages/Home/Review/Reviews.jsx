@@ -111,7 +111,7 @@ export default function Reviews() {
         {/* Left Arrow */}
         <button
           onClick={() => swiperRef.current.slidePrev()}
-          className="px-4 py-2 bg-white rounded-full text-2xl font-extrabold text-green-900 hover:bg-primary"
+          className="px-4 py-2 bg-white rounded-full text-2xl font-extrabold text-green-900 hover:bg-primary cursor-pointer"
         >
           ←
         </button>
@@ -132,7 +132,7 @@ export default function Reviews() {
         {/* Right Arrow */}
         <button
           onClick={() => swiperRef.current.slideNext()}
-          className="px-4 py-2 bg-white rounded-full text-2xl font-extrabold text-green-900 hover:bg-primary"
+          className="px-4 py-2 bg-white rounded-full text-2xl font-extrabold text-green-900 hover:bg-primary cursor-pointer"
         >
           →
         </button>

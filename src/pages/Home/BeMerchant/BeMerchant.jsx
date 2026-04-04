@@ -15,7 +15,7 @@ const BeMerchant = () => {
             We offer the lowest delivery charge with the highest value along with 100% safety of your product. Pathao courier delivers your parcels in every corner of Bangladesh right on time.
           </p>
           <button className="btn btn-primary rounded-full text-black">Become A Merchant</button>
-          <button className="btn btn-primary btn-outline rounded-full ms-4 text-primary hover:text-black">Become A Merchant</button>
+          <button className="m-0 mt-2 btn btn-primary btn-outline rounded-full md:ms-4 text-primary hover:text-black">Become A Merchant</button>
         </div>
       </div>
     </div>
