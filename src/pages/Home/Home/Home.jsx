@@ -4,6 +4,7 @@ import Services from '../Services/Services';
 import ClientLogosSlider from '../ClientLogosSlider/ClientLogosSlider';
 import Benefits from '../Benefits/Benefits';
 import BeMerchant from '../BeMerchant/BeMerchant';
+import Reviews from '../Review/Reviews';
 
 
 
@@ -16,6 +17,7 @@ const Home = () => {
       <ClientLogosSlider></ClientLogosSlider>
       <Benefits></Benefits>
       <BeMerchant></BeMerchant>
+      <Reviews></Reviews>
     </div>
   );
 };

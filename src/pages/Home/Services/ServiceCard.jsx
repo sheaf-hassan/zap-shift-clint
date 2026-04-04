@@ -3,7 +3,7 @@ import React from 'react';
 const ServiceCard = ({ service }) => {
     const {icon: Icon, title, description} = service
   return (
-    <div className="card bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 border hover:bg-[#CAEB66]">
+    <div className="card bg-white shadow-md hover:shadow-xl hover:-translate-y-1 transition duration-300 border hover:bg-[#9db15e]">
       <div className="card-body items-center text-center">
         
         {/* Icon */}
