@@ -5,6 +5,7 @@ import ClientLogosSlider from '../ClientLogosSlider/ClientLogosSlider';
 import Benefits from '../Benefits/Benefits';
 import BeMerchant from '../BeMerchant/BeMerchant';
 import Reviews from '../Review/Reviews';
+import FAQSection from '../FAQ/FAQSection';
 
 
 
@@ -18,6 +19,7 @@ const Home = () => {
       <Benefits></Benefits>
       <BeMerchant></BeMerchant>
       <Reviews></Reviews>
+      <FAQSection></FAQSection>
     </div>
   );
 };
