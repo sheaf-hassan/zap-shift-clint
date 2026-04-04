@@ -16,8 +16,10 @@ export default function FAQCard({ question, answer }) {
       </div>
 
       {/* Dotted line */}
-      <div className="border-t border-dashed my-3"></div>
+      {open && (
+        <div className="border-t border-dashed my-3 text-[#0f7d8a]"></div>
 
+      )}
       {/* Answer */}
       {open && (
         <p className="text-gray-600 text-sm leading-relaxed">
