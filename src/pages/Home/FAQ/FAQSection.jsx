@@ -29,7 +29,7 @@ export default function FAQSection() {
     },
     {
       q: "How long should I wear it daily?",
-      a: "Start with 15–30 minutes and gradually increase usage."
+      a: "Start with 15-30 minutes and gradually increase usage."
     },
     {
       q: "Is it comfortable for long-time use?",
