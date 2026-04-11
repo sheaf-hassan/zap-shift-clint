@@ -7,7 +7,7 @@ const AuthLayout = () => {
     return (
         <div className='max-w-7xl mx-auto'>
             <ProFastLogo></ProFastLogo>
-            <div className='flex'>
+            <div className='flex items-center bg-gray-50'>
                 <div className='flex-1'>
                     <Outlet></Outlet>
                 </div>
