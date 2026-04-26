@@ -1,7 +1,7 @@
 import React from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
-import { FaTrashAlt, FaUserCheck } from "react-icons/fa";
+import { FaEye, FaTrashAlt, FaUserCheck } from "react-icons/fa";
 import { IoPersonRemoveSharp } from "react-icons/io5";
 import Swal from "sweetalert2";
 
@@ -104,6 +104,11 @@ const ApproveRiders = () => {
                   }
                 </td>
                 <td>
+                  <button
+                    className="btn btn-square bg-gray-200 text-black border-0 shadow-none hover:bg-primary mr-2"
+                  >
+                    <FaEye />
+                  </button>
                   <button
                     onClick={() => handleApproval(rider)}
                     className="btn btn-square bg-gray-200 text-black border-0 shadow-none hover:bg-primary mr-2"
