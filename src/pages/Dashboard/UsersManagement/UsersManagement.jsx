@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { FaUserShield } from "react-icons/fa";
 import { FiShieldOff } from "react-icons/fi";
@@ -7,16 +7,17 @@ import Swal from "sweetalert2";
 
 const UsersManagement = () => {
   const axiosSecure = useAxiosSecure();
+  const [searchText, setSearchText] = useState('');
 
   const { refetch, data: users = [] } = useQuery({
-    queryKey: ["users"],
+    queryKey: ["users", searchText],
     queryFn: async () => {
-      const res = await axiosSecure.get(`/users`);
+      const res = await axiosSecure.get(`/users?searchText=${searchText}`);
       return res.data;
     },
   });
 
-  const handleMakeUser = (user) => {
+  const handleMakeAdmin = (user) => {
     const roleInfo = { role: "admin" };
     // TODO: must ask for confirmation before proceed
     Swal.fire({
@@ -29,7 +30,7 @@ const UsersManagement = () => {
       confirmButtonText: "Yes, mark as an Admin!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.patch(`/users/${user._id}`, roleInfo).then((res) => {
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo).then((res) => {
           console.log(res.data);
           if (res.data.modifiedCount) {
             refetch();
@@ -59,7 +60,7 @@ const UsersManagement = () => {
       confirmButtonText: "Yes, remove from Admin!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axiosSecure.patch(`/users/${user._id}`, roleInfo).then((res) => {
+        axiosSecure.patch(`/users/${user._id}/role`, roleInfo).then((res) => {
           if (res.data.modifiedCount) {
             refetch();
             Swal.fire({
@@ -76,8 +77,32 @@ const UsersManagement = () => {
   };
 
   return (
-    <div className="text-black bg-gray-50">
-      <h2 className="text-4xl">Manage Users: {users.length}</h2>
+    <div className="text-black bg-gray-50 m-3">
+      <h2 className="text-4xl mb-2">Manage Users: {users.length}</h2>
+      <p className="text-black">Search text: {searchText}</p>
+      <label className="input bg-gray-50 border border-black rounded-xl mb-2">
+        <svg
+          className="h-[1em] opacity-50"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <g
+            strokeLinejoin="round"
+            strokeLinecap="round"
+            strokeWidth="2.5"
+            fill="none"
+            stroke="currentColor"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </g>
+        </svg>
+        <input 
+          onChange={(e) => setSearchText(e.target.value)}
+          type="search" 
+          className="grow" 
+          placeholder="Search users" />
+      </label>
       <div className="overflow-x-auto">
         <table className="table text-black">
           {/* head */}
@@ -124,7 +149,7 @@ const UsersManagement = () => {
                     </button>
                   ) : (
                     <button
-                      onClick={() => handleMakeUser(user)}
+                      onClick={() => handleMakeAdmin(user)}
                       className="btn btn-square bg-green-400 text-black border-0 shadow-none hover:bg-primary mr-2"
                     >
                       <FaUserShield />
