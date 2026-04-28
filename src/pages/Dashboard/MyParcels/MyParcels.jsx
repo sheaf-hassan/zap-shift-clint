@@ -73,7 +73,8 @@ const MyParcels = () => {
               <th></th>
               <th>Name</th>
               <th>Cost</th>
-              <th>Payment </th>
+              <th>Payment</th>
+              <th>Tracing Id</th>
               <th>Delivery Status</th>
               <th>Actions</th>
             </tr>
@@ -95,6 +96,7 @@ const MyParcels = () => {
                    
                   )}
                 </td>
+                <td>{parcel.trackingId}</td>
                 <td>{parcel.deliveryStatus}</td>
                 <td>
                   <button className="btn btn-square bg-gray-200 text-black border-0 shadow-none hover:bg-primary">
