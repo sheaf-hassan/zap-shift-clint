@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet } from "react-router";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaRegCreditCard, FaTasks, FaUsers } from "react-icons/fa";
 import { RiEBike2Fill, RiEBikeFill } from "react-icons/ri";
+import { MdOutlineTaskAlt } from "react-icons/md";
 import useRole from "../hooks/useRole";
 
 const DashboardLayout = () => {
@@ -107,6 +108,18 @@ const DashboardLayout = () => {
                     <FaTasks />
                     <span className="is-drawer-close:hidden">
                       Assigned Deliveries
+                    </span>
+                  </NavLink>
+                </li>
+                <li className="text-white">
+                  <NavLink
+                    className="is-drawer-close:tooltip is-drawer-close:tooltip-right"
+                    data-tip="Completed Deliveries"
+                    to="/dashboard/completed-deliveries"
+                  >
+                    <MdOutlineTaskAlt />
+                    <span className="is-drawer-close:hidden">
+                      Completed Deliveries
                     </span>
                   </NavLink>
                 </li>

@@ -18,8 +18,10 @@ const AssignedDeliveries = () => {
     },
   });
 
-  const handleAcceptDelivery = (parcel) => {
-    const statusInfo = { deliveryStatus: "rider_arriving" };
+  const handleDeliveryStatusUpdate = (parcel, status) => {
+    const statusInfo = { deliveryStatus: status };
+
+    let message = `Parcel Status is Updated with ${status.split("_").join(" ")}`;
     axiosSecure
       .patch(`/parcels/${parcel._id}/status`, statusInfo)
       .then((res) => {
@@ -28,7 +30,7 @@ const AssignedDeliveries = () => {
           Swal.fire({
             position: "top-end",
             icon: "success",
-            title: `Thank you for accepting.`,
+            title: message,
             showConfirmButton: false,
             timer: 1500,
           });
@@ -62,7 +64,9 @@ const AssignedDeliveries = () => {
                   {parcel.deliveryStatus === "driver_assigned" ? (
                     <>
                       <button
-                        onClick={() => handleAcceptDelivery(parcel)}
+                        onClick={() =>
+                          handleDeliveryStatusUpdate(parcel, "rider_arriving")
+                        }
                         className="btn btn-primary text-black mr-2"
                       >
                         Accept
@@ -75,7 +79,24 @@ const AssignedDeliveries = () => {
                     <span>Accepted</span>
                   )}
                 </td>
-                <td>Blue</td>
+                <td>
+                  <button
+                    onClick={() =>
+                      handleDeliveryStatusUpdate(parcel, "parcel_picked_up")
+                    }
+                    className="btn btn-primary text-black mr-2"
+                  >
+                    Marked as Picked Up
+                  </button>
+                  <button
+                    onClick={() =>
+                      handleDeliveryStatusUpdate(parcel, "parcel_delivered")
+                    }
+                    className="btn btn-primary text-black mr-2"
+                  >
+                    Marked as Delivered
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>
