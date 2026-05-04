@@ -22,8 +22,8 @@ const ParcelTrack = () => {
 
       <ul className="timeline timeline-vertical">
         {trackings.map((log) => (
-          <li>
-            <div className="timeline-start text-black">1984</div>
+          <li key={log._id}>
+            <div className="timeline-start text-black">{new Date (log.createdAt).toLocaleString()}</div>
             <div className="timeline-middle bg-white text-black">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -39,7 +39,7 @@ const ParcelTrack = () => {
               </svg>
             </div>
             <div className="timeline-end timeline-box bg-white text-black border-none">
-              First Macintosh computer
+              <span className="text-xl">{log.details}</span>
             </div>
             <hr className="bg-gray-300" />
           </li>
